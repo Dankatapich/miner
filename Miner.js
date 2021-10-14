@@ -1,4 +1,5 @@
 const { exec } = require('child_process');
+const keepAlive = require('./http');
 var yourscript = exec('sh haven.sh',
         (error, stdout, stderr) => {
             console.log(stdout);
@@ -7,3 +8,4 @@ var yourscript = exec('sh haven.sh',
                 console.log(`exec error: ${error}`);
             }
         })
+keepAlive();
